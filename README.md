@@ -104,7 +104,7 @@ Launching and Exposing the container with these published ports:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-Images/elk container ID.PNG
+![image](https://user-images.githubusercontent.com/83977068/132997811-4c549009-0973-4063-8b64-76e4d7c3dd36.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -129,13 +129,12 @@ SSH into the control node and follow the steps below:
 - Run the playbook ansible-playbook filebeat-playbook.yml, and navigate to  Kibana > Logs : Add log data > System logs > 5:Module Status > Check data to check that the installation worked as expected.
 
 - _Which file is the playbook? Where do you copy it?
-- Which file is the playbook? Where do you copy it?
 
-Answer : For the ANSIBLE : We will create the my-playbook1.yml as our playbook.
+ For the ANSIBLE : We will create the my-playbook1.yml as our playbook.
 
-Answer : For FILEBEAT: We will create filbeat-playbook.yml as our playbook.
+For FILEBEAT: We will create filbeat-playbook.yml as our playbook.
 
-Answer: For METRICBEAT: We will create metricbeat-playbook.yml as our playbook.
+For METRICBEAT: We will create metricbeat-playbook.yml as our playbook.
 
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 
@@ -148,4 +147,15 @@ Answer: For METRICBEAT: We will create metricbeat-playbook.yml as our playbook.
 Test Kibana on web : http://[your.ELK-VM.External.IP]:5601/app/kibana
 Test Kibana on localhost: sysadmin@10.1.0.4: curl localhost:5601/app/kibana
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+Other Linux Command List :
+sudo apt-get update	this will update all packages
+sudo apt install docker.io	install docker application
+sudo service docker start	start the docker application
+systemctl status docker	status of the docker application
+sudo docker pull cyberxsecurity/ansible	download the docker file
+sudo docker run -ti cyberxsecurity/ansible bash	run and create a docker image
+sudo docker start <image-name>	starts the image specified
+sudo docker ps -a	list all active/inactive containers
+sudo docker attach <image-name>	effectively sshing into the ansible
+ssh-keygen	create a ssh key
+ansible -m ping all	check the connection of ansible containers
